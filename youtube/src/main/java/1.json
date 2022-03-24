@@ -1,0 +1,197 @@
+{
+  "playlistVideoRenderer": {
+    "lengthText": {
+      "simpleText": "16:53:06",
+      "accessibility": {
+        "accessibilityData": {
+          "label": "16 小時 53 分鐘 6 秒"
+        }
+      }
+    },
+    "isPlayable": true,
+    "thumbnail": {
+      "thumbnails": [
+        {
+          "width": 168,
+          "url": "https://i.ytimg.com/vi/68ktVoZMIVY/hqdefault.jpg?sqp=-oaymwEbCKgBEF5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAitgcWj_V5fiZ7Qqy9T2byUzVBUA",
+          "height": 94
+        },
+        {
+          "width": 196,
+          "url": "https://i.ytimg.com/vi/68ktVoZMIVY/hqdefault.jpg?sqp=-oaymwEbCMQBEG5IVfKriqkDDggBFQAAiEIYAXABwAEG&rs=AOn4CLAU78KYcyZ0EKe9g7cHa0kMs2vozw",
+          "height": 110
+        },
+        {
+          "width": 246,
+          "url": "https://i.ytimg.com/vi/68ktVoZMIVY/hqdefault.jpg?sqp=-oaymwEcCPYBEIoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDYvwW8zS2tmCdexjXEIInw2mvNvg",
+          "height": 138
+        },
+        {
+          "width": 336,
+          "url": "https://i.ytimg.com/vi/68ktVoZMIVY/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCU3dF6XKJE6qTXdCyT_77opQvfjg",
+          "height": 188
+        }
+      ]
+    },
+    "trackingParams": "CI8BEMY0GAAiEwjwtteH4tT1AhXQX2AKHWxACFQ=",
+    "index": {
+      "simpleText": "1"
+    },
+    "lengthSeconds": "60786",
+    "videoId": "68ktVoZMIVY",
+    "title": {
+      "accessibility": {
+        "accessibilityData": {
+          "label": "《哪吒传奇》1-52集合集 | 孩子必看的经典国产动画 | 中国神话故事 | 17小时动画视频 | 华语动漫 建立者：华语动漫 3 個月前 16 小時"
+        }
+      },
+      "runs": [
+        {
+          "text": "《哪吒传奇》1-52集合集 | 孩子必看的经典国产动画 | 中国神话故事 | 17小时动画视频 | 华语动漫"
+        }
+      ]
+    },
+    "shortBylineText": {
+      "runs": [
+        {
+          "text": "华语动漫",
+          "navigationEndpoint": {
+            "commandMetadata": {
+              "webCommandMetadata": {
+                "apiUrl": "/youtubei/v1/browse",
+                "rootVe": 3611,
+                "webPageType": "WEB_PAGE_TYPE_CHANNEL",
+                "url": "/c/CCTV%E5%B0%91%E5%84%BF%E5%AE%98%E6%96%B9%E9%A2%91%E9%81%93CCTVChildrenOfficialChannel"
+              }
+            },
+            "clickTrackingParams": "CI8BEMY0GAAiEwjwtteH4tT1AhXQX2AKHWxACFQ=",
+            "browseEndpoint": {
+              "browseId": "UCu0S0RcDd_zAavMtsuv2qyw",
+              "canonicalBaseUrl": "/c/CCTV少儿官方频道CCTVChildrenOfficialChannel"
+            }
+          }
+        }
+      ]
+    },
+    "menu": {
+      "menuRenderer": {
+        "trackingParams": "CI8BEMY0GAAiEwjwtteH4tT1AhXQX2AKHWxACFQ=",
+        "accessibility": {
+          "accessibilityData": {
+            "label": "操作選單"
+          }
+        },
+        "items": [
+          {
+            "menuServiceItemRenderer": {
+              "trackingParams": "CJABEP6YBBgDIhMI8LbXh-LU9QIV0F9gCh1sQAhU",
+              "icon": {
+                "iconType": "ADD_TO_QUEUE_TAIL"
+              },
+              "text": {
+                "runs": [
+                  {
+                    "text": "加入序列"
+                  }
+                ]
+              },
+              "serviceEndpoint": {
+                "commandMetadata": {
+                  "webCommandMetadata": {
+                    "sendPost": true
+                  }
+                },
+                "clickTrackingParams": "CJABEP6YBBgDIhMI8LbXh-LU9QIV0F9gCh1sQAhU",
+                "signalServiceEndpoint": {
+                  "signal": "CLIENT_SIGNAL",
+                  "actions": [
+                    {
+                      "clickTrackingParams": "CJABEP6YBBgDIhMI8LbXh-LU9QIV0F9gCh1sQAhU",
+                      "addToPlaylistCommand": {
+                        "onCreateListCommand": {
+                          "commandMetadata": {
+                            "webCommandMetadata": {
+                              "sendPost": true,
+                              "apiUrl": "/youtubei/v1/playlist/create"
+                            }
+                          },
+                          "createPlaylistServiceEndpoint": {
+                            "params": "CAQ%3D",
+                            "videoIds": [
+                              "68ktVoZMIVY"
+                            ]
+                          },
+                          "clickTrackingParams": "CJABEP6YBBgDIhMI8LbXh-LU9QIV0F9gCh1sQAhU"
+                        },
+                        "videoId": "68ktVoZMIVY",
+                        "openMiniplayer": true,
+                        "listType": "PLAYLIST_EDIT_LIST_TYPE_QUEUE",
+                        "videoIds": [
+                          "68ktVoZMIVY"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "thumbnailOverlays": [
+      {
+        "thumbnailOverlayTimeStatusRenderer": {
+          "style": "DEFAULT",
+          "text": {
+            "simpleText": "16:53:06",
+            "accessibility": {
+              "accessibilityData": {
+                "label": "16 小時 53 分鐘 6 秒"
+              }
+            }
+          }
+        }
+      },
+      {
+        "thumbnailOverlayNowPlayingRenderer": {
+          "text": {
+            "runs": [
+              {
+                "text": "現正播放"
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "navigationEndpoint": {
+      "commandMetadata": {
+        "webCommandMetadata": {
+          "rootVe": 3832,
+          "webPageType": "WEB_PAGE_TYPE_WATCH",
+          "url": "/watch?v=68ktVoZMIVY&list=PLsw2iU9xmpfYbK8TqsB7wHHiuvpjLDp4f&index=1"
+        }
+      },
+      "clickTrackingParams": "CI8BEMY0GAAiEwjwtteH4tT1AhXQX2AKHWxACFQyCnBscHBfdmlkZW9aJFZMUExzdzJpVTl4bXBmWWJLOFRxc0I3d0hIaXV2cGpMRHA0ZpoBAxD6LA==",
+      "watchEndpoint": {
+        "playlistId": "PLsw2iU9xmpfYbK8TqsB7wHHiuvpjLDp4f",
+        "watchEndpointSupportedOnesieConfig": {
+          "html5PlaybackOnesieConfig": {
+            "commonConfig": {
+              "url": "https://rr4---sn-i3b7knld.googlevideo.com/initplayback?source=youtube&orc=1&oeis=1&c=WEB&oad=3200&ovd=3200&oaad=11000&oavd=11000&ocs=700&oewis=1&oputc=1&ofpcc=1&beids=24064829&msp=1&odeak=1&odepv=1&osfc=1&id=ebc92d56864c2156&ip=47.57.141.221&initcwndbps=716250&mt=1643383538&oweuc="
+            }
+          }
+        },
+        "index": 0,
+        "videoId": "68ktVoZMIVY",
+        "params": "OAI%3D",
+        "loggingContext": {
+          "vssLoggingContext": {
+            "serializedContextData": "GiJQTHN3MmlVOXhtcGZZYks4VHFzQjd3SEhpdXZwakxEcDRm"
+          }
+        }
+      }
+    }
+  }
+}
