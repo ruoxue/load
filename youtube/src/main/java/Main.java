@@ -20,14 +20,21 @@ public class Main {
     }
 
 
-
-
-    public static void main(String[] args) throws  InterruptedException {
+    public static void main(String[] args) throws InterruptedException {
 
         Main adbc = new Main();
-
-        String s="come ";
+        int j = 0;
+        String s = "come";
+        int  x=310;
+        int  y=860;
         do {
+
+            adbc.executeCMDconsole("adb shell input tap "+1858 +"  "+ 302);
+            Thread.sleep(new Random().nextInt(600) + 400);
+
+
+            j++;
+            s = "COme"+ j;
             adbc.executeCMDconsole("adb shell svc power stayon true");
             Thread.sleep(new Random().nextInt(600) + 400);
 
@@ -42,8 +49,15 @@ public class Main {
             Thread.sleep(new Random().nextInt(600) + 400);
 
 
-            adbc.executeCMDconsole("adb shell input text \""+s+"\" ");
+
+
+            adbc.executeCMDconsole("adb shell input text \"" + s + "\" ");
             Thread.sleep(new Random().nextInt(600) + 400);
+
+            adbc.executeCMDconsole("adb shell input tap "+x +"  "+ y);
+            Thread.sleep(new Random().nextInt(600) + 400);
+
+
 
             adbc.executeCMDconsole("adb shell input keyevent 66");
             Thread.sleep(new Random().nextInt(600) + 400);
