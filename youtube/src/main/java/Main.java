@@ -1,70 +1,31 @@
 import java.io.*;
+import java.util.List;
 import java.util.Random;
 
 public class Main {
-    public void executeCMDconsole(String cmd) {
-
-        System.out.println("在cmd里面输入" + cmd);
-        Process p;
-        try {
-            p = Runtime.getRuntime().exec(cmd);
-            System.out.println(":::::::::::::::::::开始在控制台打印日志::::::::::::::::::::::>>>>>>");
-            //p.waitFor();
-            BufferedReader bReader = new BufferedReader(new InputStreamReader(p.getInputStream(), "gbk"));
-            String line = null;
-            while ((line = bReader.readLine()) != null)
-                System.out.println(line);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
 
 
     public static void main(String[] args) throws InterruptedException {
 
-        Main adbc = new Main();
+        AdbUtil adbc = new AdbUtil();
         int j = 0;
         String s = "come";
-        int  x=310;
-        int  y=860;
+        int x = 310;
+        int y = 860;
+
         do {
-
-            adbc.executeCMDconsole("adb shell input tap "+1858 +"  "+ 302);
-            Thread.sleep(new Random().nextInt(600) + 400);
-
-
+            adbc.click(1858, 302);
             j++;
-            s = "COme"+ j;
-            adbc.executeCMDconsole("adb shell svc power stayon true");
-            Thread.sleep(new Random().nextInt(600) + 400);
-
-
-            adbc.executeCMDconsole("adb shell input keyevent 82");
-            Thread.sleep(new Random().nextInt(600) + 400);
-
+            s = "COme" + j;
+            adbc.power();
+            adbc.keyevent(Even.KEYCODE_MENU);
             for (int i = 0; i < 10; i++) {
-
-                adbc.executeCMDconsole("adb shell input keyevent 67");
+                adbc.keyevent(Even.KEYCODE_DEL);
             }
-            Thread.sleep(new Random().nextInt(600) + 400);
-
-
-
-
-            adbc.executeCMDconsole("adb shell input text \"" + s + "\" ");
-            Thread.sleep(new Random().nextInt(600) + 400);
-
-            adbc.executeCMDconsole("adb shell input tap "+x +"  "+ y);
-            Thread.sleep(new Random().nextInt(600) + 400);
-
-
-
-            adbc.executeCMDconsole("adb shell input keyevent 66");
-            Thread.sleep(new Random().nextInt(600) + 400);
-
+            adbc.input(s);
+            adbc.click(x, y);
+            adbc.keyevent(Even.KEYCODE_ENTER);
         } while (true);
-
-
     }
 
 }
