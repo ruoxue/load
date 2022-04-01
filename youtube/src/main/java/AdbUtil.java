@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class AdbUtil {
@@ -29,13 +30,13 @@ public class AdbUtil {
             }
 
         }
-        System.out.println(new Date()+":::::::::::::::::::在cmd里面输入" + cmd + "::::::::::::::::::::::");
+        System.out.println(new  SimpleDateFormat("yy-MM-dd HH:mm:ss").format(new Date()) +Thread.currentThread().getName()+":::::::::::::::::::在cmd里面输入" + cmd + "::::::::::::::::::::::");
 
         try {
             p = Runtime.getRuntime().exec(cmd);
             int i = new Random().nextInt(300) + 200;
 
-            System.out.println(new Date()+":::::::::::::::::::开始在控制台打印日志,延迟"+i+"ms::::::::::::::::::::::>>>>>>");
+            System.out.println(new  SimpleDateFormat("yy-MM-dd HH:mm:ss").format(new Date())+Thread.currentThread().getName()+":::::::::::::::::::开始在控制台打印日志,延迟"+i+"ms::::::::::::::::::::::>>>>>>");
             //p.waitFor();
             BufferedReader bReader = new BufferedReader(new InputStreamReader(p.getInputStream(), "gbk"));
 
