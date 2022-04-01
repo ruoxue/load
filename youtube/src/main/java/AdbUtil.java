@@ -2,10 +2,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-import java.util.Random;
+import java.util.*;
 
 public class AdbUtil {
     public String executeCMDconsole(String cmd) {
@@ -15,8 +12,6 @@ public class AdbUtil {
         if (cmd.startsWith("adb")) {
 
             String osName = System.getProperty("os.name");
-
-
             if (osName.toLowerCase(Locale.ROOT).indexOf("mac") != -1) {
                 cmd = System.getProperty("user.dir") +
                         File.separator +
@@ -34,11 +29,13 @@ public class AdbUtil {
             }
 
         }
-        System.out.println(":::::::::::::::::::在cmd里面输入" + cmd + "::::::::::::::::::::::");
+        System.out.println(new Date()+":::::::::::::::::::在cmd里面输入" + cmd + "::::::::::::::::::::::");
 
         try {
             p = Runtime.getRuntime().exec(cmd);
-            System.out.println(":::::::::::::::::::开始在控制台打印日志::::::::::::::::::::::>>>>>>");
+            int i = new Random().nextInt(300) + 200;
+
+            System.out.println(new Date()+":::::::::::::::::::开始在控制台打印日志,延迟"+i+"ms::::::::::::::::::::::>>>>>>");
             //p.waitFor();
             BufferedReader bReader = new BufferedReader(new InputStreamReader(p.getInputStream(), "gbk"));
 
@@ -47,7 +44,7 @@ public class AdbUtil {
                 sb.append("\n");
                 sb.append(line);
             }
-            Thread.sleep(new Random().nextInt(600) + 400);
+            Thread.sleep(i);
             return sb.toString();
 
         } catch (IOException | InterruptedException e) {
@@ -196,7 +193,7 @@ public class AdbUtil {
     public boolean slide(String device, int x, int y, int x1, int y1) {
         try {
 
-            executeCMDconsole("adb -s " + device + "  shell swipe   " + x + "  " + y + " " + x1 + "  " + y1);
+            executeCMDconsole("adb -s " + device + "  shell input swipe   " + x + "  " + y + " " + x1 + "  " + y1 +"  500");
             return true;
         } catch (Exception e) {
             return false;
