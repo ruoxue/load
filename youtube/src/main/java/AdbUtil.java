@@ -92,8 +92,9 @@ public class AdbUtil {
 
     //    adb shell  dumpsys activity activities
     public boolean getCurrActivity() {
-        for (int i = 0; i < getDevices().size(); i++) {
-            getCurrActivity(getDevices().get(i));
+        List<String> devices = getDevices();
+        for (int i = 0; i < devices.size(); i++) {
+            getCurrActivity(devices.get(i));
 
         }
         return true;
@@ -112,8 +113,9 @@ public class AdbUtil {
     }
 
     public boolean click(int x, int y) {
-        for (int i = 0; i < getDevices().size(); i++) {
-            click(getDevices().get(i), x, y);
+        List<String> devices = getDevices();
+        for (int i = 0; i < devices.size(); i++) {
+            click(devices.get(i), x, y);
         }
         return true;
     }
@@ -131,9 +133,9 @@ public class AdbUtil {
 
     public boolean power() {
 
-
-        for (int i = 0; i < getDevices().size(); i++) {
-            power(getDevices().get(i));
+        List<String> devices = getDevices();
+        for (int i = 0; i < devices.size(); i++) {
+            power(devices.get(i));
 
         }
         return true;
@@ -150,8 +152,9 @@ public class AdbUtil {
     }
 
     public boolean keyevent(int key) {
-        for (int i = 0; i < getDevices().size(); i++) {
-            keyevent(getDevices().get(i), key);
+        List<String> devices = getDevices();
+        for (int i = 0; i < devices.size(); i++) {
+            keyevent(devices.get(i), key);
 
         }
         return true;
@@ -167,8 +170,9 @@ public class AdbUtil {
     }
 
     public boolean input(String text) {
-        for (int i = 0; i < getDevices().size(); i++) {
-            input(getDevices().get(i), text);
+        List<String> devices = getDevices();
+        for (int i = 0; i < devices.size(); i++) {
+            input(devices.get(i), text);
         }
         return true;
     }
@@ -184,8 +188,9 @@ public class AdbUtil {
 
 
     public boolean slide(int x, int y, int x1, int y1) {
-        for (int i = 0; i < getDevices().size(); i++) {
-            slide(getDevices().get(i), x, y, x1, y1);
+        List<String> devices = getDevices();
+        for (int i = 0; i < devices.size(); i++) {
+            slide(devices.get(i), x, y, x1, y1);
         }
         return true;
     }
@@ -203,9 +208,9 @@ public class AdbUtil {
 
 
     public boolean longClick(int x, int y) {
-
-        for (int i = 0; i < getDevices().size(); i++) {
-            longClick(getDevices().get(i), x, y);
+        List<String> devices = getDevices();
+        for (int i = 0; i < devices.size(); i++) {
+            longClick(devices.get(i), x, y);
         }
 
         return true;
@@ -223,9 +228,9 @@ public class AdbUtil {
     public List<String> size() {
 
         List<String> xes = new ArrayList<>();
-
-        for (int i = 0; i < getDevices().size(); i++) {
-            String size = size(getDevices().get(i));
+        List<String> devices = getDevices();
+        for (int i = 0; i < devices.size(); i++) {
+            String size = size(devices.get(i));
             xes.add(size);
         }
 
@@ -246,8 +251,9 @@ public class AdbUtil {
 
 
     public boolean clickScale(int x, int y) {
-        for (int i = 0; i < getDevices().size(); i++) {
-            clickScale(getDevices().get(i), x, y);
+        List<String> devices = getDevices();
+        for (int i = 0; i < devices.size(); i++) {
+            clickScale(devices.get(i), x, y);
         }
         return true;
     }
@@ -270,8 +276,9 @@ public class AdbUtil {
 
 
     public boolean slideScale(int x, int y, int x1, int y1) {
-        for (int i = 0; i < getDevices().size(); i++) {
-            slideScale(getDevices().get(i), x, y, x1, y1);
+        List<String> devices = getDevices();
+        for (int i = 0; i < devices.size(); i++) {
+            slideScale(devices.get(i), x, y, x1, y1);
         }
         return true;
     }
@@ -294,9 +301,9 @@ public class AdbUtil {
 
 
     public boolean longClickScale(int x, int y) {
-
-        for (int i = 0; i < getDevices().size(); i++) {
-            longClickScale(getDevices().get(i), x, y);
+        List<String> devices = getDevices();
+        for (int i = 0; i < devices.size(); i++) {
+            longClickScale(devices.get(i), x, y);
         }
 
         return true;
@@ -325,8 +332,9 @@ public class AdbUtil {
 
 
     public boolean clickScaleHor(int x, int y) {
-        for (int i = 0; i < getDevices().size(); i++) {
-            clickScaleHor(getDevices().get(i), x, y);
+        List<String> devices = getDevices();
+        for (int i = 0; i < devices.size(); i++) {
+            clickScaleHor(devices.get(i), x, y);
         }
         return true;
     }
@@ -349,8 +357,9 @@ public class AdbUtil {
 
 
     public boolean slideScaleHor(int x, int y, int x1, int y1) {
-        for (int i = 0; i < getDevices().size(); i++) {
-            slideScaleHor(getDevices().get(i), x, y, x1, y1);
+        List<String> devices = getDevices();
+        for (int i = 0; i < devices.size(); i++) {
+            slideScaleHor(devices.get(i), x, y, x1, y1);
         }
         return true;
     }
@@ -373,9 +382,9 @@ public class AdbUtil {
 
 
     public boolean longClickScaleHor(int x, int y) {
-
-        for (int i = 0; i < getDevices().size(); i++) {
-            longClickScaleHor(getDevices().get(i), x, y);
+        List<String> devices =  getDevices();
+        for (int i = 0; i < devices.size(); i++) {
+            longClickScaleHor(devices.get(i), x, y);
         }
 
         return true;
