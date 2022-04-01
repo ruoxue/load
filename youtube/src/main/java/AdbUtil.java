@@ -24,7 +24,7 @@ public class AdbUtil {
                         "main" + File.separator
                         + "resources" + File.separator + cmd;
 
-            }else  if (osName.toLowerCase(Locale.ROOT).indexOf("window") != -1) {
+            } else if (osName.toLowerCase(Locale.ROOT).indexOf("window") != -1) {
                 cmd = System.getProperty("user.dir") +
                         File.separator +
                         "src" + File.separator +
@@ -94,7 +94,11 @@ public class AdbUtil {
 
     //    adb shell  dumpsys activity activities
     public boolean getCurrActivity() {
-        return getCurrActivity(getDevices().get(0));
+        for (int i = 0; i < getDevices().size(); i++) {
+              getCurrActivity(getDevices().get(i));
+
+        }
+        return  true;
     }
 
     public boolean getCurrActivity(String device) {
@@ -110,7 +114,10 @@ public class AdbUtil {
     }
 
     public boolean click(int x, int y) {
-        return click(getDevices().get(0), x, y);
+        for (int i = 0; i < getDevices().size(); i++) {
+            click(getDevices().get(i), x, y);
+        }
+        return true;
     }
 
 
@@ -126,7 +133,13 @@ public class AdbUtil {
 
     public boolean power() {
 
-        return power(getDevices().get(0));
+
+        for (int i = 0; i < getDevices().size(); i++) {
+            power(getDevices().get(i));
+
+        }
+        return true;
+
     }
 
     public boolean power(String device) {
@@ -139,7 +152,11 @@ public class AdbUtil {
     }
 
     public boolean keyevent(int key) {
-        return keyevent(getDevices().get(0), key);
+        for (int i = 0; i < getDevices().size(); i++) {
+            keyevent(getDevices().get(i), key);
+
+        }
+        return true;
     }
 
     public boolean keyevent(String device, int key) {
@@ -152,7 +169,10 @@ public class AdbUtil {
     }
 
     public boolean input(String text) {
-        return input(getDevices().get(0), text);
+        for (int i = 0; i < getDevices().size(); i++) {
+            input(getDevices().get(i), text);
+        }
+        return true;
     }
 
     public boolean input(String device, String text) {
@@ -166,7 +186,10 @@ public class AdbUtil {
 
 
     public boolean slide(int x, int y, int x1, int y1) {
-        return slide(getDevices().get(0), x, y, x1, y1);
+        for (int i = 0; i < getDevices().size(); i++) {
+            slide(getDevices().get(i), x, y, x1, y1);
+        }
+        return true;
     }
 
 
@@ -180,7 +203,13 @@ public class AdbUtil {
     }
 
     public boolean longClick(int x, int y) {
-        return longClick(getDevices().get(0), x, y);
+
+        for (int i = 0; i < getDevices().size(); i++) {
+            longClick(getDevices().get(i), x, y);
+
+        }
+
+        return true;
     }
 
 
