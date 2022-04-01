@@ -24,6 +24,13 @@ public class AdbUtil {
                         "main" + File.separator
                         + "resources" + File.separator + cmd;
 
+            }else  if (osName.toLowerCase(Locale.ROOT).indexOf("window") != -1) {
+                cmd = System.getProperty("user.dir") +
+                        File.separator +
+                        "src" + File.separator +
+                        "main" + File.separator
+                        + "resources" + File.separator + cmd;
+
             }
 
         }
