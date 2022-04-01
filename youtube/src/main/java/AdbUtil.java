@@ -95,10 +95,10 @@ public class AdbUtil {
     //    adb shell  dumpsys activity activities
     public boolean getCurrActivity() {
         for (int i = 0; i < getDevices().size(); i++) {
-              getCurrActivity(getDevices().get(i));
+            getCurrActivity(getDevices().get(i));
 
         }
-        return  true;
+        return true;
     }
 
     public boolean getCurrActivity(String device) {
@@ -195,6 +195,7 @@ public class AdbUtil {
 
     public boolean slide(String device, int x, int y, int x1, int y1) {
         try {
+
             executeCMDconsole("adb -s " + device + "  shell swipe   " + x + "  " + y + " " + x1 + "  " + y1);
             return true;
         } catch (Exception e) {
@@ -202,11 +203,11 @@ public class AdbUtil {
         }
     }
 
+
     public boolean longClick(int x, int y) {
 
         for (int i = 0; i < getDevices().size(); i++) {
             longClick(getDevices().get(i), x, y);
-
         }
 
         return true;
@@ -220,4 +221,184 @@ public class AdbUtil {
             return false;
         }
     }
+
+    public List<String> size() {
+
+        List<String> xes = new ArrayList<>();
+
+        for (int i = 0; i < getDevices().size(); i++) {
+            String size = size(getDevices().get(i));
+            xes.add(size);
+        }
+
+        return xes;
+    }
+
+
+    public String size(String device) {
+        try {
+            String s = executeCMDconsole("adb -s " + device + "  shell wm size");
+            s = s.trim();
+            return s.replace("Physical size:", "").trim();
+
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+
+    public boolean clickScale(int x, int y) {
+        for (int i = 0; i < getDevices().size(); i++) {
+            clickScale(getDevices().get(i), x, y);
+        }
+        return true;
+    }
+
+
+    public boolean clickScale(String device, int x, int y) {
+        try {
+            String size = size(device);
+            String[] xes = size.split("x");
+            int posX = Integer.parseInt(xes[0]);
+            int posY = Integer.parseInt(xes[1]);
+
+            click(device, x * posX / 100, y * posY / 100);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+
+    }
+
+
+    public boolean slideScale(int x, int y, int x1, int y1) {
+        for (int i = 0; i < getDevices().size(); i++) {
+            slideScale(getDevices().get(i), x, y, x1, y1);
+        }
+        return true;
+    }
+
+
+    public boolean slideScale(String device, int x, int y, int x1, int y1) {
+        try {
+            String size = size(device);
+            String[] xes = size.split("x");
+            int posX = Integer.parseInt(xes[0]);
+            int posY = Integer.parseInt(xes[1]);
+
+            slide(device, x * posX / 100, y * posY / 100, x1 * posX / 100, y1 * posY / 100);
+
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+
+    public boolean longClickScale(int x, int y) {
+
+        for (int i = 0; i < getDevices().size(); i++) {
+            longClickScale(getDevices().get(i), x, y);
+        }
+
+        return true;
+    }
+
+
+    public boolean longClickScale(String device, int x, int y) {
+        try {
+            String size = size(device);
+            String[] xes = size.split("x");
+            int posX = Integer.parseInt(xes[0]);
+            int posY = Integer.parseInt(xes[1]);
+
+            return slide(device, x*posX/100, y*posY/100, x*posX/100, y*posY/100);
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+
+
+
+
+
+
+
+
+    public boolean clickScaleHor(int x, int y) {
+        for (int i = 0; i < getDevices().size(); i++) {
+            clickScaleHor(getDevices().get(i), x, y);
+        }
+        return true;
+    }
+
+
+    public boolean clickScaleHor(String device, int x, int y) {
+        try {
+            String size = size(device);
+            String[] xes = size.split("x");
+            int posX = Integer.parseInt(xes[1]);
+            int posY = Integer.parseInt(xes[0]);
+
+            click(device, x * posX / 100, y * posY / 100);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+
+    }
+
+
+    public boolean slideScaleHor(int x, int y, int x1, int y1) {
+        for (int i = 0; i < getDevices().size(); i++) {
+            slideScaleHor(getDevices().get(i), x, y, x1, y1);
+        }
+        return true;
+    }
+
+
+    public boolean slideScaleHor(String device, int x, int y, int x1, int y1) {
+        try {
+            String size = size(device);
+            String[] xes = size.split("x");
+            int posX = Integer.parseInt(xes[1]);
+            int posY = Integer.parseInt(xes[0]);
+
+            slide(device, x * posX / 100, y * posY / 100, x1 * posX / 100, y1 * posY / 100);
+
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+
+    public boolean longClickScaleHor(int x, int y) {
+
+        for (int i = 0; i < getDevices().size(); i++) {
+            longClickScaleHor(getDevices().get(i), x, y);
+        }
+
+        return true;
+    }
+
+
+    public boolean longClickScaleHor(String device, int x, int y) {
+        try {
+            String size = size(device);
+            String[] xes = size.split("x");
+            int posX = Integer.parseInt(xes[1]);
+            int posY = Integer.parseInt(xes[0]);
+
+            return slide(device, x*posX/100, y*posY/100, x*posX/100, y*posY/100);
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+
+
+
+
 }
